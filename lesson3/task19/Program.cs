@@ -1,19 +1,46 @@
-﻿// Задача 19 Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
+﻿// Задача 19
 
-/* 14212 -> нет
+// Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 
-   12821 -> да
+// 14212 -> нет
 
-   23432 -> да */
+// 12821 -> да
+
+// 23432 -> да
 
 
-Console.Write("Введите пятизначное число: ");
+int number = Prompt("Введите число: ");
+int numberMirr = FindMirrorNumber(number);
+FindPalindron(number, numberMirr);
 
-int number = int.Parse(Console.ReadLine());
-
-/* int TheSecondDigit(int x)
+int Prompt(string message)
 {
-    int resalt = x / 10;
-    resalt = resalt % 10;
-    return resalt;
-} */
+    Console.Write(message);
+    int mess = int.Parse(Console.ReadLine()!);
+    return mess;
+}
+
+int FindMirrorNumber(int x)
+{
+    int result = 0;
+    while (x > 0)
+    {
+        result = result * 10 + x % 10;
+        x /= 10;
+    }
+    return result;
+}
+
+void FindPalindron(int a, int b)
+{
+    Console.WriteLine(number);
+    Console.WriteLine(numberMirr);
+    if (number == numberMirr)
+    {
+        Console.Write("YES");
+    }
+    else
+    {
+        Console.Write("NO");
+    }
+}
